@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alayna</title>
+
+    <style>
+        body {
+            background-color: rgb(82, 0, 71);
+        }
+
+        .painel {
+            margin: auto;
+            background-color: rgb(82, 0, 71);
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative;
+        }
+
+        .imagem {
+            width: 100%;
+            height: auto;
+        }
+
+        h2 {
+            margin: 10px 0;
+        }
+
+        #sim, #nao {
+            height: 40px;
+            width: 60px;
+            background-color: rgb(0, 0, 0);
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin: 5px;
+            position: relative; /* Mantém a capacidade de movimentação */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <img class="imagem" src="img/f684e328c087417c89ed1d790cf4302c.jpg" alt="">
+        <h2>A be é gostosa?</h2>
+        
+        <a href="https://www.youtube.com/watch?v=QLCpqdqeoII"><button id="sim">Sim!</button></a>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+    </div>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao");
+            var painel = document.querySelector('.painel');
+            var margem = 100; // Espaço para mover o botão em pixels
+
+            var maxX = painel.clientWidth - botaoNao.offsetWidth - margem;
+            var maxY = painel.clientHeight - botaoNao.offsetHeight - margem;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+
+</body>
+</html>
